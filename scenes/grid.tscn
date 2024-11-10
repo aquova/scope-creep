@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dybusjv0ogm3m"]
+
+[ext_resource type="Script" path="res://scripts/grid.gd" id="1_xn10m"]
+
+[node name="grid" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 340.0
+offset_bottom = 340.0
+script = ExtResource("1_xn10m")
+
+[node name="tiles" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

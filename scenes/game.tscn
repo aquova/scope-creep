@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://b4othkkm4qdu0"]
+
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_b3ybe"]
+[ext_resource type="PackedScene" uid="uid://cnefskhf6k1y3" path="res://scenes/night.tscn" id="2_mccwo"]
+[ext_resource type="PackedScene" uid="uid://c031ev20utqij" path="res://scenes/player.tscn" id="2_qn5gk"]
+[ext_resource type="PackedScene" uid="uid://doeyebl4by86r" path="res://scenes/enemy.tscn" id="3_u6bes"]
+[ext_resource type="PackedScene" uid="uid://dv8oqeo6p4kcj" path="res://scenes/hud.tscn" id="5_woxwr"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_b3ybe")
+
+[node name="NightBackground" parent="." instance=ExtResource("2_mccwo")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="Player" parent="Camera2D" instance=ExtResource("2_qn5gk")]
+position = Vector2(53, 390)
+
+[node name="Enemy" parent="Camera2D" instance=ExtResource("3_u6bes")]
+position = Vector2(920, 390)
+
+[node name="HUD" parent="." instance=ExtResource("5_woxwr")]
+
+[connection signal="fire_weapon" from="Camera2D/Player" to="." method="_on_player_fire_weapon"]
+[connection signal="game_over" from="Camera2D/Player" to="." method="_on_player_game_over"]
+[connection signal="enemy_killed" from="Camera2D/Enemy" to="." method="_on_enemy_enemy_killed"]
+[connection signal="fire_weapon" from="Camera2D/Enemy" to="." method="_on_enemy_fire_weapon"]

@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqbyk0rpxuy00"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_huj7f"]
+bg_color = Color(0.6, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="HpBar" type="ProgressBar"]
+visible = false
+offset_right = 88.0
+offset_bottom = 16.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_huj7f")
+show_percentage = false

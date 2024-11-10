@@ -1,0 +1,6 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cvbqw4c61eixa"]
+
+[ext_resource type="Shader" path="res://shaders/hurtbox.gdshader" id="1_0cbc1"]
+
+[resource]
+shader = ExtResource("1_0cbc1")

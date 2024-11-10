@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxdo5xxtygba7"]
+
+[ext_resource type="Script" path="res://scripts/vanishing_text.gd" id="1_6c7t3"]
+[ext_resource type="FontFile" uid="uid://cu8f7gpikemi6" path="res://fonts/Silver.ttf" id="1_f7u32"]
+
+[node name="VanishingNumber" type="Label"]
+offset_right = 204.0
+offset_bottom = 81.0
+theme_override_fonts/font = ExtResource("1_f7u32")
+theme_override_font_sizes/font_size = 72
+text = "TEST"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_6c7t3")
+
+[node name="FinishedTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="FinishedTimer" to="." method="_on_finished_timer_timeout"]

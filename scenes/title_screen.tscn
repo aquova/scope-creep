@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3hiflfil0qj0"]
+
+[ext_resource type="Script" path="res://scripts/title_screen.gd" id="1_gppto"]
+[ext_resource type="PackedScene" uid="uid://cnefskhf6k1y3" path="res://scenes/night.tscn" id="1_h7np5"]
+[ext_resource type="FontFile" uid="uid://cu8f7gpikemi6" path="res://fonts/Silver.ttf" id="2_7u2hg"]
+
+[node name="TitleScreen" type="Node2D"]
+script = ExtResource("1_gppto")
+
+[node name="NightBackground" parent="." instance=ExtResource("1_h7np5")]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(3700, 0)
+
+[node name="CreditsLabel" type="Label" parent="ParallaxBackground/ParallaxLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 165.0
+offset_top = 690.0
+offset_right = 2555.0
+offset_bottom = 731.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_7u2hg")
+theme_override_font_sizes/font_size = 36
+text = "Game by Austin Bricker, 2024                     Silver Font by poppyworks -- https://poppyworks.itch.io/silver                   Desert Background by cryptogene -- https://cryptogene.itch.io/parallax-desert-background                    Character sprites by pixelfrog -- https://pixelfrog-assets.itch.io/tiny-swords"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TitleLabel" type="Label" parent="CanvasLayer"]
+offset_left = 300.0
+offset_top = 442.0
+offset_right = 984.0
+offset_bottom = 685.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_7u2hg")
+theme_override_font_sizes/font_size = 200
+text = "SCOPE CREEP"
+horizontal_alignment = 1
+vertical_alignment = 1

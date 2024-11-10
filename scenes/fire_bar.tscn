@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmvucbbpwf0oe"]
+
+[ext_resource type="Script" path="res://scripts/fire_bar.gd" id="1_eakmd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_76g43"]
+bg_color = Color(0.61, 0.467667, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="FireBar" type="ProgressBar"]
+offset_right = 84.0
+offset_bottom = 16.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_76g43")
+show_percentage = false
+script = ExtResource("1_eakmd")
